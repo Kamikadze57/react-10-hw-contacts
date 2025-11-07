@@ -1,5 +1,3 @@
-// Filter.jsx
-
 import { Component } from "react";
 
 class Filter extends Component {
@@ -9,12 +7,12 @@ class Filter extends Component {
     return (
       <div className="filter_box">
         <label className="filter_label">
-          <p>Фільтр контактів за ім'ям</p>
+          <p>Find by name</p>
           <input 
             className="filter_input" 
             type="text" 
             value={filterValue} 
-            onChange={onFilterChange} // 👈 Цей рядок має бути!
+            onChange={onFilterChange}
           />
         </label>
       </div>

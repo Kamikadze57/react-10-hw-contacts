@@ -2,7 +2,7 @@ import { Component } from "react";
 
 class ContactsList extends Component {
   render() {
-    const { contacts } = this.props;
+    const { contacts, onDelete } = this.props;
     return (
       <>
         <ul className="contacts__list">
@@ -10,6 +10,7 @@ class ContactsList extends Component {
             <li key={id} className="contact__item">
               <p className="contact__name">{name}</p>
               <p className="contact__phone">{phone}</p>
+              <button className="contact__delete-btn" onClick={() => onDelete(id)}>Delete</button>
             </li>
           ))}
         </ul>
