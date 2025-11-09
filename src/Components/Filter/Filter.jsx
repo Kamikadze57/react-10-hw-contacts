@@ -1,5 +1,3 @@
-// Filter.jsx
-
 import { Component } from "react";
 
 class Filter extends Component {
@@ -14,7 +12,7 @@ class Filter extends Component {
             className="filter_input" 
             type="text" 
             value={filterValue} 
-            onChange={onFilterChange} // 👈 Цей рядок має бути!
+            onChange={onFilterChange}
           />
         </label>
       </div>
