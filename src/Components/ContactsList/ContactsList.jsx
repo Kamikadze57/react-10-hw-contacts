@@ -10,7 +10,7 @@ class ContactsList extends Component {
             <li key={id} className="contact__item">
               <p className="contact__name">{name}</p>
               <p className="contact__phone">{phone}</p>
-              <button className="contact__delete-btn" onClick={() => onDelete(id)}>Delete</button>
+              <button className="delete__btn" onClick={() => onDelete(id)}>Delete</button>
             </li>
           ))}
         </ul>

@@ -5,11 +5,11 @@ class Filter extends Component {
     const { filterValue, onFilterChange } = this.props;
 
     return (
-      <div className="filter_box">
-        <label className="filter_label">
+      <div className="filter__box">
+        <label className="filter__label">
           <p>Find by name</p>
           <input 
-            className="filter_input" 
+            className="filter__input" 
             type="text" 
             value={filterValue} 
             onChange={onFilterChange}
