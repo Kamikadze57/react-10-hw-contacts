@@ -5,6 +5,7 @@ class AddContact extends Component {
     const { name, number, onChange, onAdd } = this.props;
     return (
       <div className="add__box">
+        <form className="add__form">
         <label className="add__label">
           <p>Name</p>
           <input className="add__input" type="text" name="name" value={name} onChange={onChange} />
@@ -13,6 +14,7 @@ class AddContact extends Component {
           <p>Phone</p>
           <input className="add__input" type="number" name="number" value={number} onChange={onChange} />
         </label>
+        </form>
         <button className="add__btn" onClick={onAdd}>
           Add contact
         </button>
