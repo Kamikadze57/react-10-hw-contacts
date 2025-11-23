@@ -11,6 +11,18 @@ class App extends Component {
     number: "",
     filter: "",
   };
+  componentDidMount() {
+    const contacts = localStorage.getItem("contacts");
+    const parsedContacts = JSON.parse(contacts);
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+  componentDidUpdate(prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    }
+  }
   Change = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -54,7 +66,7 @@ class App extends Component {
     this.setState((prevState) => ({
       contacts: prevState.contacts.filter((contact) => contact.id !== id),
     }));
-  }
+  };
   render() {
     const visibleContacts = this.getFilteredContacts();
     console.log(this.state.contacts);
@@ -62,7 +74,7 @@ class App extends Component {
       <div className="app">
         <AddContact name={this.state.name} number={this.state.number} onChange={this.Change} onAdd={this.AddContact} />
         <Filter filterValue={this.state.filter} onFilterChange={this.FilterChange} />
-        <ContactsList contacts={visibleContacts} onDelete={this.DeleteContact}/>
+        <ContactsList contacts={visibleContacts} onDelete={this.DeleteContact} />
       </div>
     );
   }
