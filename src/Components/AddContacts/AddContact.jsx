@@ -12,7 +12,7 @@ class AddContact extends Component {
         </label>
         <label className="add__label">
           <p>Phone</p>
-          <input className="add__input" type="number" name="number" value={number} onChange={onChange} />
+          <input className="add__input" type="number" name="number" value={number} onChange={onChange} placeholder="093XXXXXXX"/>
         </label>
         </form>
         <button className="add__btn" onClick={onAdd}>
